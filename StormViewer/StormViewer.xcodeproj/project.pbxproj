@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C63B7EF61E13EA7400464591 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B7EF51E13EA7400464591 /* DetailViewController.swift */; };
 		C650BDD41E130ACB006716ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C650BDD31E130ACB006716ED /* AppDelegate.swift */; };
 		C650BDD61E130ACB006716ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C650BDD51E130ACB006716ED /* ViewController.swift */; };
 		C650BDD91E130ACB006716ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C650BDD71E130ACB006716ED /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C63B7EF51E13EA7400464591 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C650BDD01E130ACB006716ED /* StormViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StormViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C650BDD31E130ACB006716ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C650BDD51E130ACB006716ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				C650BDD31E130ACB006716ED /* AppDelegate.swift */,
 				C650BDD51E130ACB006716ED /* ViewController.swift */,
+				C63B7EF51E13EA7400464591 /* DetailViewController.swift */,
 				C650BDD71E130ACB006716ED /* Main.storyboard */,
 				C650BDDA1E130ACB006716ED /* Assets.xcassets */,
 				C650BDDC1E130ACB006716ED /* LaunchScreen.storyboard */,
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63B7EF61E13EA7400464591 /* DetailViewController.swift in Sources */,
 				C650BDD61E130ACB006716ED /* ViewController.swift in Sources */,
 				C650BDD41E130ACB006716ED /* AppDelegate.swift in Sources */,
 			);
@@ -348,6 +352,7 @@
 				C650BDE41E130ACB006716ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
