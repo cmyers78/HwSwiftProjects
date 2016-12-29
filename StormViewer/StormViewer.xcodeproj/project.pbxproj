@@ -23,6 +23,7 @@
 		C650BDF71E130BEC006716ED /* nssl0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C650BDED1E130BEC006716ED /* nssl0049.jpg */; };
 		C650BDF81E130BEC006716ED /* nssl0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C650BDEE1E130BEC006716ED /* nssl0051.jpg */; };
 		C650BDF91E130BEC006716ED /* nssl0091.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C650BDEF1E130BEC006716ED /* nssl0091.jpg */; };
+		C6ED96511E156BA900A25E16 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6ED96501E156BA900A25E16 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C650BDED1E130BEC006716ED /* nssl0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0049.jpg; sourceTree = "<group>"; };
 		C650BDEE1E130BEC006716ED /* nssl0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0051.jpg; sourceTree = "<group>"; };
 		C650BDEF1E130BEC006716ED /* nssl0091.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0091.jpg; sourceTree = "<group>"; };
+		C6ED96501E156BA900A25E16 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				C650BDDA1E130ACB006716ED /* Assets.xcassets */,
 				C650BDDC1E130ACB006716ED /* LaunchScreen.storyboard */,
 				C650BDDF1E130ACB006716ED /* Info.plist */,
+				C6ED96501E156BA900A25E16 /* start.txt */,
 				C650BDE51E130BEC006716ED /* Content */,
 			);
 			path = StormViewer;
@@ -168,6 +171,7 @@
 				C650BDF11E130BEC006716ED /* nssl0034.jpg in Resources */,
 				C650BDF81E130BEC006716ED /* nssl0051.jpg in Resources */,
 				C650BDDE1E130ACB006716ED /* LaunchScreen.storyboard in Resources */,
+				C6ED96511E156BA900A25E16 /* start.txt in Resources */,
 				C650BDF41E130BEC006716ED /* nssl0043.jpg in Resources */,
 				C650BDF01E130BEC006716ED /* nssl0033.jpg in Resources */,
 				C650BDF51E130BEC006716ED /* nssl0045.jpg in Resources */,
