@@ -62,6 +62,9 @@ class ViewController: UITableViewController {
         // capture by the closure as unowned references--> it can use them but doesn't make strong reference cycles
         // because the closure doesn't own them.
         
+        // This is placeholder for a change i'll make shortly.
+        
+        
         let submitAction = UIAlertAction(title: "Submit", style: .default) {
             [unowned self, ac] _ in
             let answer = ac.textFields![0]
@@ -75,6 +78,7 @@ class ViewController: UITableViewController {
     
     func submit(answer : String) {
         
+        print("Nothing to see here")
         
         
     }
