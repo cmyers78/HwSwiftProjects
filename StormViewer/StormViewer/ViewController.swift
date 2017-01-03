@@ -56,6 +56,7 @@ class ViewController: UITableViewController {
             
             // 2: Success! Set its selectedImage property
             vc.selectedImage = pictures[indexPath.row]
+            vc.textLabel.text = "So there"
             
             // 3: Push it onto the navigation controller
             navigationController?.pushViewController(vc, animated: true)
