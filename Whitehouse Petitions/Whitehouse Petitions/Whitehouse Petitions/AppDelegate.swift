@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // defines the root view controller
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            
+            // gets reference to the storyboard file - nil means use my curren app bundle
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            // creates a new VC wrapped inside a navigation controller -> hence the identifier we set earlier for the navigation controller
+            let vc = storyboard.instantiateViewController(withIdentifier: "NavController")
+            
+            // creates new tab in UI tab bar - uses top rated icon
+            vc.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
+            
+            // add the new vc to the tab bar controller's array
+            tabBarController.viewControllers?.append(vc)
+            
+        }
         return true
     }
 
