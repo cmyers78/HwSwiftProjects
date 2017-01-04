@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         let urlString : String
         
         if navigationController?.tabBarItem.tag == 0 {
@@ -51,6 +53,8 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = UIColor.lightGray
+        
         
         let petition = petitions[indexPath.row]
         cell.textLabel?.text = petition["title"]
