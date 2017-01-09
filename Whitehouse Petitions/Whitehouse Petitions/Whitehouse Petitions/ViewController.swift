@@ -41,7 +41,7 @@ class ViewController: UITableViewController {
                 }
             }
         }
-        
+        // only happens if background task fails to return
         performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
     }
 
