@@ -13,6 +13,7 @@
 		C6501B7A1E2419BB00C627FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6501B791E2419BB00C627FD /* Assets.xcassets */; };
 		C6501B7D1E2419BB00C627FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6501B7B1E2419BB00C627FD /* LaunchScreen.storyboard */; };
 		C6501B851E241AF600C627FD /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6501B841E241AF600C627FD /* PersonCell.swift */; };
+		C6B4E3F41E256D08000ACD39 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B4E3F31E256D08000ACD39 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C6501B7C1E2419BB00C627FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6501B7E1E2419BB00C627FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6501B841E241AF600C627FD /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		C6B4E3F31E256D08000ACD39 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C6501B721E2419BB00C627FD /* AppDelegate.swift */,
 				C6501B741E2419BB00C627FD /* ViewController.swift */,
+				C6B4E3F31E256D08000ACD39 /* Person.swift */,
 				C6501B761E2419BB00C627FD /* Main.storyboard */,
 				C6501B841E241AF600C627FD /* PersonCell.swift */,
 				C6501B791E2419BB00C627FD /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			files = (
 				C6501B851E241AF600C627FD /* PersonCell.swift in Sources */,
 				C6501B751E2419BB00C627FD /* ViewController.swift in Sources */,
+				C6B4E3F41E256D08000ACD39 /* Person.swift in Sources */,
 				C6501B731E2419BB00C627FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +308,7 @@
 				C6501B831E2419BB00C627FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
