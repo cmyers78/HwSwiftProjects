@@ -42,6 +42,33 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // grab the Person object at the array index
+        let person = people[indexPath.item]
+        
+        // Create UIAlertController instance
+        let ac = UIAlertController(title: "Rename Person", message: nil, preferredStyle: .alert)
+        // Addd text field to alert controller
+        ac.addTextField()
+        
+        // create cancel action (button)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        // create ok/submit button with name typed in by user -- did this in 2 steps rather than one
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+            [unowned self, ac] _ in
+            let newName = ac.textFields![0]
+            person.name = newName.text!
+            
+            self.collectionView?.reloadData()
+        })
+        
+        ac.addAction(okAction)
+        
+        present(ac, animated: true)
+    }
+    
+
     func addNewPerson() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
