@@ -32,6 +32,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 512, y: 0))
         makeBouncer(at: CGPoint(x: 768, y: 0))
         makeBouncer(at: CGPoint(x: 1024, y: 0))
+        makeBouncer(at: CGPoint(x: 128, y: 384))
+        makeBouncer(at: CGPoint(x: 384, y: 384))
+        makeBouncer(at: CGPoint(x: 640, y: 384))
+        
         
     }
     
