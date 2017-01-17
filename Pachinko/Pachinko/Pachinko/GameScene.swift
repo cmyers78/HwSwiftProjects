@@ -11,6 +11,26 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var scoreLabel : SKLabelNode!
+    
+    var score : Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    var editLabel : SKLabelNode!
+    
+    var editingMode : Bool = false {
+        didSet {
+            if editingMode {
+                editLabel.text = "Done"
+            } else {
+                editLabel.text = "Edit"
+            }
+        }
+    }
+    
     override func didMove(to view: SKView) {
         
         let background = SKSpriteNode(imageNamed: "background.jpg")
@@ -36,6 +56,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 384, y: 384))
         makeBouncer(at: CGPoint(x: 640, y: 384))
         
+        // Score Label Setup
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text = "Score: 0"
+        scoreLabel.horizontalAlignmentMode = .right
+        scoreLabel.position = CGPoint(x: 980, y: 700)
+        addChild(scoreLabel)
+        
+        // Edit Label Setup
+        editLabel = SKLabelNode(fontNamed: "Chalkduster")
+        editLabel.text = "Edit"
+        editLabel.position = CGPoint(x: 80, y: 700)
+        addChild(editLabel)
         
     }
     
@@ -43,17 +75,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let touch = touches.first {
             let location = touch.location(in: self)
             
-            let ball = SKSpriteNode(imageNamed: "ballRed")
-            ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-            // collisonBitMask means "which nodes should I bump into?
-            // contactTestBitMask means "which collisons do you want to know about?
+            let objects = nodes(at: location)
             
-            // tell me about every collision the ball has
-            ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
-            ball.physicsBody?.restitution = 0.4
-            ball.position = location
-            ball.name = "ball"
-            addChild(ball)
+            if objects.contains(editLabel) {
+                editingMode = !editingMode
+            } else {
+                
+                if editingMode {
+                    // create a box
+                } else {
+                    
+                    let ball = SKSpriteNode(imageNamed: "ballRed")
+                    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+                    // collisonBitMask means "which nodes should I bump into?
+                    // contactTestBitMask means "which collisons do you want to know about?
+                    
+                    // tell me about every collision the ball has
+                    ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
+                    ball.physicsBody?.restitution = 0.4
+                    ball.position = location
+                    ball.name = "ball"
+                    addChild(ball)
+                }
+            }
         }
     }
     
@@ -99,8 +143,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func collisionBetween(ball : SKNode, object: SKNode) {
         if object.name == "good" {
             destroy(ball: ball)
+            score += 1
         } else if object.name == "bad" {
             destroy(ball: ball)
+            score -= 1
         }
     }
     
