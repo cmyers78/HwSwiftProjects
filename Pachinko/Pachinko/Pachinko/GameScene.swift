@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import GameplayKit
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -83,6 +84,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if editingMode {
                     // create a box
+                    
+                    let size = CGSize(width: GKRandomDistribution(lowestValue: 16, highestValue: 128).nextInt(), height: 16)
+                    let box = SKSpriteNode(color: RandomColor(), size: size)
+                    
+                    box.zRotation = RandomCGFloat(min: 0, max: 3)
+                    box.position = location
+                    box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
+                    box.physicsBody!.isDynamic = false
+                    addChild(box)
+                    
+                    
                 } else {
                     
                     let ball = SKSpriteNode(imageNamed: "ballRed")
@@ -151,6 +163,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func destroy(ball : SKNode) {
+        
+        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
+            fireParticles.position = ball.position
+            addChild(fireParticles)
+        }
         ball.removeFromParent()
     }
     

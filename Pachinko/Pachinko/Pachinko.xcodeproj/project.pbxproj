@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C667E4021E2FA0020073BA76 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667E4011E2FA0020073BA76 /* Helper.swift */; };
 		C6F5A12A1E29052C00E1DDC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F5A1291E29052C00E1DDC9 /* AppDelegate.swift */; };
 		C6F5A12C1E29052C00E1DDC9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C6F5A12B1E29052C00E1DDC9 /* GameScene.sks */; };
 		C6F5A1301E29052C00E1DDC9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F5A12F1E29052C00E1DDC9 /* GameScene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C667E4011E2FA0020073BA76 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C6F5A1261E29052C00E1DDC9 /* Pachinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pachinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F5A1291E29052C00E1DDC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F5A12B1E29052C00E1DDC9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C6F5A12F1E29052C00E1DDC9 /* GameScene.swift */,
 				C6F5A1311E29052C00E1DDC9 /* GameViewController.swift */,
 				C6F5A1331E29052C00E1DDC9 /* Main.storyboard */,
+				C667E4011E2FA0020073BA76 /* Helper.swift */,
 				C6F5A1361E29052C00E1DDC9 /* Assets.xcassets */,
 				C6F5A1381E29052C00E1DDC9 /* LaunchScreen.storyboard */,
 				C6F5A13B1E29052C00E1DDC9 /* Info.plist */,
@@ -147,6 +150,7 @@
 				C6F5A1301E29052C00E1DDC9 /* GameScene.swift in Sources */,
 				C6F5A1321E29052C00E1DDC9 /* GameViewController.swift in Sources */,
 				C6F5A12A1E29052C00E1DDC9 /* AppDelegate.swift in Sources */,
+				C667E4021E2FA0020073BA76 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +314,7 @@
 				C6F5A1401E29052C00E1DDC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
