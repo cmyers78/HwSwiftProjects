@@ -50,8 +50,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         content.sound = UNNotificationSound.default()
         
         var dateComponents = DateComponents()
-        dateComponents.hour = 9
-        dateComponents.minute = 50
+        dateComponents.hour = 7
+        dateComponents.minute = 22
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
         
@@ -65,9 +65,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         
+        let later = UNNotificationAction(identifier: "later", title: "Read Later...", options: [])
         let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
         
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        let category = UNNotificationCategory(identifier: "alarm", actions: [later, show], intentIdentifiers: [])
         
         center.setNotificationCategories([category])
         
