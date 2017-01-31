@@ -11,14 +11,25 @@ import UserNotifications
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
+    var notify = NotifyUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        notify.notifyDelegate = self
+        
         
         // Create button bar items on navigation bar
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerLocal))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerLocal))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
         
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        notify.registerLocal()
+        //NotifyUser().registerLocal()
         
     }
 
@@ -31,6 +42,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             
             if granted {
                 print("yay!")
+                self.scheduleLocal()
             } else {
                 print("D'oh!")
             }
@@ -39,7 +51,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func scheduleLocal() {
-        registerCategories()
+       // registerCategories()
         let center = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
@@ -53,7 +65,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         dateComponents.hour = 7
         dateComponents.minute = 22
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 8, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
@@ -61,40 +73,54 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
     }
     
-    func registerCategories() {
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
-        
-        let later = UNNotificationAction(identifier: "later", title: "Read Later...", options: [])
-        let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
-        
-        let category = UNNotificationCategory(identifier: "alarm", actions: [later, show], intentIdentifiers: [])
-        
-        center.setNotificationCategories([category])
-        
+//    func registerCategories() {
+//        let center = UNUserNotificationCenter.current()
+//        center.delegate = self
+//        
+//        let later = UNNotificationAction(identifier: "later", title: "Read Later...", options: [])
+//        let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
+//        
+//        let category = UNNotificationCategory(identifier: "alarm", actions: [later, show], intentIdentifiers: [])
+//        
+//        center.setNotificationCategories([category])
+//        
+//    }
+    
+    func printStuff() {
+        print(" I need to stop the timer")
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        
-        if let customData = userInfo["customData"] as? String {
-            print("Custom data received: \(customData)")
-            
-            switch response.actionIdentifier {
-            case UNNotificationDefaultActionIdentifier:
-                print("Default identifer")
-                case "show":
-                //the user tapped our "show more info..." button
-                print("show more information")
-                break
-            default:
-                break
-                
-            }
-        }
-        
-        completionHandler()
-    }
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        let userInfo = response.notification.request.content.userInfo
+//        
+//        if let customData = userInfo["customData"] as? String {
+//            print("Custom data received: \(customData)")
+//            
+//            switch response.actionIdentifier {
+//            case UNNotificationDefaultActionIdentifier:
+//                print("Default identifer")
+//                case "show":
+//                //the user tapped our "show more info..." button
+//                print("show more information")
+//                break
+//            default:
+//                break
+//                
+//            }
+//        }
+//        
+//        completionHandler()
+//        
+//        
+//        
+//        
+//    }
 
+    @IBAction func nextScreen(_ sender: Any) {
+        
+        performSegue(withIdentifier: "next", sender: nil)
+        
+        
+    }
 }
 
