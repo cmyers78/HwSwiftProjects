@@ -22,6 +22,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         notify.notifyDelegate = self
         notify.registerLocal()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(printStuff), name: NSNotification.Name(rawValue: "UIApplicationWillEnterForeground"), object: nil)
         // Create button bar items on navigation bar
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerLocal))
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
@@ -101,7 +102,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 //    }
     
     func printStuff() {
-        print(" I need to stop the timer")
+        print(" I reentered foreground")
     }
     
 //    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
