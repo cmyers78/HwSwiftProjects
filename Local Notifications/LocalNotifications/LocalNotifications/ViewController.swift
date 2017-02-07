@@ -18,6 +18,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("view did load function run")
         notify.notifyDelegate = self
         notify.registerLocal()
         
@@ -31,9 +32,19 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        print("view did appear")
         //NotifyUser().registerLocal()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view will be disappearing")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view has disappeared")
     }
 
 //    func registerLocal() {
